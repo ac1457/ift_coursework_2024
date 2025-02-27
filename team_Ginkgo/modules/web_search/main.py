@@ -1,3 +1,10 @@
+'''
+This script is used to run both FastAPI and Flask servers simultaneously.
+The FastAPI server is used to query CSR reports from the database, while the Flask server is used to provide a web interface for users to search for a company's financial report by entering the company name and year.
+The script starts the FastAPI server in a separate thread and the Flask server in the main thread. It also provides a simple menu for users to open the web page in a browser or close the servers.
+
+'''
+
 import threading
 import uvicorn
 import sys
