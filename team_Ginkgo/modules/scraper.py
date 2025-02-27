@@ -1,3 +1,17 @@
+'''
+This script is used to scrape the PDF report URLs for the companies in the database.
+It uses the Google Custom Search API to search for the company's CSR report for a specific year.
+The script first establishes a connection to the database using the psycopg2 library and the database configuration settings.
+It then queries the database to get the list of companies that do not have a report URL.
+Next, it defines a function to search for the PDF report URL using the Google Custom Search API.
+The function makes up to 3 attempts to find the PDF report URL for the given company and year.
+If the PDF report URL is found, it returns the URL; otherwise, it returns None.
+The script then defines a function to update the database with the PDF report URL for the given company and year.
+The function calls the search function to get the PDF report URL and updates the database with the URL.
+Finally, the script uses multithreading to scrape the PDF report URLs for multiple companies concurrently.
+It creates a thread pool executor with a maximum number of threads and maps the companies to the process function to scrape the PDF report URLs.
+The script prints the status of each company's PDF report URL scraping and the total time taken for the process.    
+'''
 import psycopg2
 from googleapiclient.discovery import build
 from config import DB_CONFIG, GOOGLE_API_KEY, GOOGLE_CX
