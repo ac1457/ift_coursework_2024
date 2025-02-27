@@ -1,3 +1,12 @@
+'''
+This script is used to schedule the running of the database, scraper, and minio_client scripts.
+The scripts are run every quarter (Jan 1st, Apr 1st, Jul 1st, Oct 1st) at 00:00.
+The script uses the apscheduler library to schedule the tasks in the background.
+The run_script function is used to run a specific script, and the run_all_scripts function is used to run all the scripts.
+The start_scheduled_tasks function is used to start the background scheduler.
+The script is run as the main module to start the scheduled tasks.  
+
+'''
 import subprocess
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
