@@ -1,3 +1,24 @@
+"""MinIO Client Module
+
+This module handles PDF document management with MinIO object storage. It provides functionality to:
+- Download PDFs from URLs using both requests and Selenium
+- Upload PDFs to MinIO storage
+- Update database records with MinIO paths
+- Process multiple PDFs concurrently
+
+The module uses MinIO Python SDK for object storage operations, psycopg2 for database
+interactions, and both requests and Selenium for PDF downloads.
+
+Attributes:
+    BASE_TEMP_DIR (str): Base temporary directory for storing downloaded PDFs
+    minio_client (Minio): Global MinIO client instance
+    global_driver (webdriver.Chrome): Global Selenium WebDriver instance
+
+Example:
+    >>> from minio_client import multithread_process_pdfs
+    >>> multithread_process_pdfs()  # Process all pending PDFs
+"""
+
 from minio import Minio
 import psycopg2
 import requests
