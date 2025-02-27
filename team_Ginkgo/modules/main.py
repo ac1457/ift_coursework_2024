@@ -1,3 +1,15 @@
+'''
+This module contains the main function that allows the user to choose between running the scripts now, scheduling the scripts to run every quarter, or exiting the program.
+The main function uses the scheduler module to run the scripts and start the scheduled tasks in the background.
+The user can choose to run the scripts immediately, schedule the scripts to run every quarter, or exit the program.
+
+Example usage:
+
+1. Run scripts now: Run all scripts immediately.
+2. Schedule scripts to run every quarter: Start scheduled tasks in the background.
+3. Exit: Exit the program.
+
+'''
 import scheduler
 
 # Main function to handle scheduling and manual execution
