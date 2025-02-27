@@ -1,3 +1,14 @@
+'''
+This script creates a table in the database to store the companies and their CSR reports.
+It first establishes a connection to the database using the psycopg2 library and the database configuration settings.
+It then creates a schema named "Ginkgo" if it does not already exist.   
+Next, it creates a table named "csr_reports" with columns for the company symbol, company name, report year, report URL, and Minio path.
+After creating the table, it selects all companies from the "company_static" table and inserts each company starting from the year 2014 into the "csr_reports" table.
+The script uses the "ON CONFLICT DO nothing" clause to avoid inserting duplicate records.
+Finally, it commits the changes and closes the database connection.
+The script prints a success message after successfully inserting the companies into the "csr_reports" table.
+
+'''
 import psycopg2
 from config import DB_CONFIG
 
