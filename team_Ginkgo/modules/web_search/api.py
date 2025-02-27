@@ -1,3 +1,13 @@
+'''
+This module provides a FastAPI server to query CSR reports from the database.
+Example usage:
+    - Query CSR report by company name: http://
+    - Query CSR report by stock symbol: http://
+    
+To start the server, run:
+    $ python api.py
+
+'''
 from fastapi import FastAPI, HTTPException
 import psycopg2
 import sys
